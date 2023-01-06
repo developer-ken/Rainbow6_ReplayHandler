@@ -1,0 +1,2 @@
+﻿This is the modyfied version of r6-dissect. You can find the source here: https://github.com/developer-ken/r6-dissect
+That is a fork of https://github.com/redraskal/r6-dissect , which is of great importance for this project to be practical.
