@@ -36,8 +36,8 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.SavesRckickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToGameCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.详细信息DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -107,16 +107,16 @@
             this.copyToGameCToolStripMenuItem.Name = "copyToGameCToolStripMenuItem";
             this.copyToGameCToolStripMenuItem.Click += new System.EventHandler(this.copyToGameCToolStripMenuItem_Click);
             // 
+            // 详细信息DToolStripMenuItem
+            // 
+            resources.ApplyResources(this.详细信息DToolStripMenuItem, "详细信息DToolStripMenuItem");
+            this.详细信息DToolStripMenuItem.Name = "详细信息DToolStripMenuItem";
+            // 
             // exportEToolStripMenuItem
             // 
             resources.ApplyResources(this.exportEToolStripMenuItem, "exportEToolStripMenuItem");
             this.exportEToolStripMenuItem.Name = "exportEToolStripMenuItem";
             this.exportEToolStripMenuItem.Click += new System.EventHandler(this.exportEToolStripMenuItem_Click);
-            // 
-            // 详细信息DToolStripMenuItem
-            // 
-            resources.ApplyResources(this.详细信息DToolStripMenuItem, "详细信息DToolStripMenuItem");
-            this.详细信息DToolStripMenuItem.Name = "详细信息DToolStripMenuItem";
             // 
             // removeRToolStripMenuItem
             // 

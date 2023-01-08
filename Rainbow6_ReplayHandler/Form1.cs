@@ -474,11 +474,13 @@ namespace Rainbow6_ReplayHandler
             var r = GetSelectedReplays(listBox2, Saved);
             SyncTask(() =>
             {
+                gamefswatcher.EnableRaisingEvents = false;
                 foreach (var replay in r)
                 {
                     CopyDirectory(replay.DirPath, Path.Combine(GameSavePath, replay.GetCorrectSaveDirName()), true);
                 }
                 InGame.UpdateAsync().Wait();
+                gamefswatcher.EnableRaisingEvents = true;
             });
         }
 
