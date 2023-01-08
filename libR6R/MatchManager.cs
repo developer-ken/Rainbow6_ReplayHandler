@@ -37,33 +37,6 @@
             return false;
         }
 
-        public static bool IsDirOccupied(string dir)
-        {
-            if (!Directory.Exists(dir)) return false;
-            var flist = Directory.GetFiles(dir);
-            foreach (var file in flist)
-            {
-                if (IsFileOccupied(file)) return true;
-            }
-            return false;
-        }
-
-        public static bool IsFileOccupied(string fname)
-        {
-            try
-            {
-                if (!File.Exists(fname)) return false;
-                var fs = File.OpenWrite(fname);
-                fs.Close();
-                fs.Dispose();
-                return false;
-            }
-            catch
-            {
-                return true;
-            }
-        }
-
         public async Task UpdateAsync()
         {
             var flist = Directory.GetDirectories(_savepath);

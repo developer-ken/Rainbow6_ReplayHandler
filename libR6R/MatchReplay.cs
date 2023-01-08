@@ -168,5 +168,16 @@ namespace libR6R
             if (this.Rounds.Count == 0) return false;
             return this.Rounds.First().Value.MatchId.Equals(other?.Rounds.First().Value.MatchId);
         }
+
+        public static bool IsDirOccupied(string dir)
+        {
+            if (!Directory.Exists(dir)) return false;
+            var flist = Directory.GetFiles(dir);
+            foreach (var file in flist)
+            {
+                if (RoundReplay.IsFileOccupied(file)) return true;
+            }
+            return false;
+        }
     }
 }

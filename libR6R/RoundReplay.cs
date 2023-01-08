@@ -295,11 +295,27 @@ namespace libR6R
             startInfo.CreateNoWindow = true;
             startInfo.StandardOutputEncoding = Encoding.UTF8;
             r6d.StartInfo = startInfo;
+            while (IsFileOccupied(filepath)) Thread.Sleep(500); 
             r6d.Start();
             r6d.WaitForExit();
             return JObject.Parse(r6d.StandardOutput.ReadToEnd());
         }
 
+        public static bool IsFileOccupied(string fname)
+        {
+            try
+            {
+                if (!File.Exists(fname)) return false;
+                var fs = File.OpenWrite(fname);
+                fs.Close();
+                fs.Dispose();
+                return false;
+            }
+            catch
+            {
+                return true;
+            }
+        }
         private static Task<JObject> RawRec2JsonAsync(string filepath)
         {
             return Task.Run(() => RawRec2Json(filepath));
