@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO.IsolatedStorage;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace libR6R
+﻿namespace libR6R
 {
     public class MatchReplay : IEquatable<MatchReplay>
     {
@@ -31,6 +24,15 @@ namespace libR6R
 
         private MatchReplay() { }
 
+        public bool IsRoundContained(string file)
+        {
+            foreach (var rr in Rounds.Values)
+            {
+                if (Path.Equals(file, rr.SourceFile)) return true;
+            }
+            return false;
+        }
+
         private async Task _FromDirectoryAsync(string replaydir)
         {
             var files = Directory.GetFiles(replaydir);
@@ -39,8 +41,10 @@ namespace libR6R
             {
                 if (Path.GetExtension(file).ToLower() == ".rec")
                 {
+                    if (IsRoundContained(file)) continue;
                     var round = RoundReplay.ReadFromFileAsync(file, Players);
-                    rounds.Add(round);
+                    if (!rounds.Contains(round))
+                        rounds.Add(round);
                 }
             }
             foreach (var task in rounds)
@@ -48,6 +52,7 @@ namespace libR6R
                 await task;
                 var round = task.Result;
                 await round.DumpRawjsonAsync();
+                if (Rounds.Values.Contains(round)) continue;
                 Rounds.Add(round.RoundNumber + round.OvertimeRoundNumber, round);
 
                 HostTotalKill += round.HostKills;
@@ -113,9 +118,22 @@ namespace libR6R
             return fname.Substring(0, fname.Length - 4);
         }
 
+        public async Task<bool> UpdateAsync()
+        {
+            var cnt = Rounds.Count;
+            await _FromDirectoryAsync(DirPath);
+            return cnt < Rounds.Count;
+        }
+
+        public bool IsRelatedPath(string path)
+        {
+            return path.StartsWith(DirPath);
+        }
+
         public bool Equals(MatchReplay? other)
         {
-            return this.Rounds.First().Equals(other?.Rounds.First());
+            if (this.Rounds.Count == 0) return false;
+            return this.Rounds.First().Value.MatchId.Equals(other?.Rounds.First().Value.MatchId);
         }
     }
 }

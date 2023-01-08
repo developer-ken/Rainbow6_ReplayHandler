@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace libR6R
+﻿namespace libR6R
 {
     public class MatchManager
     {
@@ -14,6 +8,7 @@ namespace libR6R
         public delegate void MatchListChange(MatchReplay match);
         public event MatchListChange NewMatchFound;
         public event MatchListChange MatchRemoved;
+        public event MatchListChange MatchChanged;
 
         public MatchManager(string savepath)
         {
@@ -103,6 +98,14 @@ namespace libR6R
                 foreach (var match in toBremoved)
                 {
                     Replays.Remove(match);
+                }
+            }
+
+            foreach (var match in Replays)
+            {
+                if (await match.UpdateAsync())
+                {
+                    MatchChanged?.Invoke(match);
                 }
             }
         }

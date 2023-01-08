@@ -1,9 +1,7 @@
-﻿
-using Newtonsoft.Json;
+﻿using libR6R.Events;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.Text;
-using libR6R.Events;
 
 namespace libR6R
 {

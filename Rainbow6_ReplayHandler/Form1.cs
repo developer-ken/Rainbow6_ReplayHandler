@@ -1,9 +1,6 @@
 using libR6R;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
-using System.IO;
-using System.Net.NetworkInformation;
-using System.Security.Cryptography.Pkcs;
 
 namespace Rainbow6_ReplayHandler
 {
@@ -544,7 +541,7 @@ namespace Rainbow6_ReplayHandler
 
         private void gamefswatcher_Changed(object sender, FileSystemEventArgs e)
         {
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

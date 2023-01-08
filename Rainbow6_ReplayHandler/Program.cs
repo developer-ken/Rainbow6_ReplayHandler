@@ -1,5 +1,3 @@
-using libR6R;
-
 namespace Rainbow6_ReplayHandler
 {
     internal static class Program
