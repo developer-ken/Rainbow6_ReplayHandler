@@ -36,19 +36,22 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.SavesRckickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToGameCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.详细信息DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.InGameRclickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.savePermanentlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unSelectUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.detailsDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDirectoryOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detailsDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.导出EToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tasklistErrHandler = new System.Windows.Forms.Timer(this.components);
             this.gamefswatcher = new System.IO.FileSystemWatcher();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox2.SuspendLayout();
             this.SavesRckickMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -92,8 +95,9 @@
             resources.ApplyResources(this.SavesRckickMenu, "SavesRckickMenu");
             this.SavesRckickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyToGameCToolStripMenuItem,
-            this.removeRToolStripMenuItem,
-            this.exportEToolStripMenuItem});
+            this.详细信息DToolStripMenuItem,
+            this.exportEToolStripMenuItem,
+            this.removeRToolStripMenuItem});
             this.SavesRckickMenu.Name = "SavesRckickMenu";
             this.SavesRckickMenu.Opening += new System.ComponentModel.CancelEventHandler(this.SavesRckickMenu_Opening);
             // 
@@ -103,16 +107,22 @@
             this.copyToGameCToolStripMenuItem.Name = "copyToGameCToolStripMenuItem";
             this.copyToGameCToolStripMenuItem.Click += new System.EventHandler(this.copyToGameCToolStripMenuItem_Click);
             // 
+            // exportEToolStripMenuItem
+            // 
+            resources.ApplyResources(this.exportEToolStripMenuItem, "exportEToolStripMenuItem");
+            this.exportEToolStripMenuItem.Name = "exportEToolStripMenuItem";
+            this.exportEToolStripMenuItem.Click += new System.EventHandler(this.exportEToolStripMenuItem_Click);
+            // 
+            // 详细信息DToolStripMenuItem
+            // 
+            resources.ApplyResources(this.详细信息DToolStripMenuItem, "详细信息DToolStripMenuItem");
+            this.详细信息DToolStripMenuItem.Name = "详细信息DToolStripMenuItem";
+            // 
             // removeRToolStripMenuItem
             // 
             resources.ApplyResources(this.removeRToolStripMenuItem, "removeRToolStripMenuItem");
             this.removeRToolStripMenuItem.Name = "removeRToolStripMenuItem";
             this.removeRToolStripMenuItem.Click += new System.EventHandler(this.removeRToolStripMenuItem_Click);
-            // 
-            // exportEToolStripMenuItem
-            // 
-            resources.ApplyResources(this.exportEToolStripMenuItem, "exportEToolStripMenuItem");
-            this.exportEToolStripMenuItem.Name = "exportEToolStripMenuItem";
             // 
             // groupBox1
             // 
@@ -143,9 +153,10 @@
             this.InGameRclickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.savePermanentlyToolStripMenuItem,
             this.unSelectUToolStripMenuItem,
-            this.deleteDToolStripMenuItem,
+            this.openDirectoryOToolStripMenuItem,
             this.detailsDToolStripMenuItem,
-            this.openDirectoryOToolStripMenuItem});
+            this.导出EToolStripMenuItem,
+            this.deleteDToolStripMenuItem});
             this.InGameRclickMenu.Name = "InGameRclickMenu";
             this.InGameRclickMenu.Opening += new System.ComponentModel.CancelEventHandler(this.InGameRclickMenu_Opening);
             // 
@@ -161,22 +172,28 @@
             this.unSelectUToolStripMenuItem.Name = "unSelectUToolStripMenuItem";
             this.unSelectUToolStripMenuItem.Click += new System.EventHandler(this.moveToSaveUToolStripMenuItem_Click);
             // 
-            // deleteDToolStripMenuItem
+            // openDirectoryOToolStripMenuItem
             // 
-            resources.ApplyResources(this.deleteDToolStripMenuItem, "deleteDToolStripMenuItem");
-            this.deleteDToolStripMenuItem.Name = "deleteDToolStripMenuItem";
-            this.deleteDToolStripMenuItem.Click += new System.EventHandler(this.deleteDToolStripMenuItem_Click);
+            resources.ApplyResources(this.openDirectoryOToolStripMenuItem, "openDirectoryOToolStripMenuItem");
+            this.openDirectoryOToolStripMenuItem.Name = "openDirectoryOToolStripMenuItem";
+            this.openDirectoryOToolStripMenuItem.Click += new System.EventHandler(this.openDirectoryOToolStripMenuItem_Click);
             // 
             // detailsDToolStripMenuItem
             // 
             resources.ApplyResources(this.detailsDToolStripMenuItem, "detailsDToolStripMenuItem");
             this.detailsDToolStripMenuItem.Name = "detailsDToolStripMenuItem";
             // 
-            // openDirectoryOToolStripMenuItem
+            // 导出EToolStripMenuItem
             // 
-            resources.ApplyResources(this.openDirectoryOToolStripMenuItem, "openDirectoryOToolStripMenuItem");
-            this.openDirectoryOToolStripMenuItem.Name = "openDirectoryOToolStripMenuItem";
-            this.openDirectoryOToolStripMenuItem.Click += new System.EventHandler(this.openDirectoryOToolStripMenuItem_Click);
+            resources.ApplyResources(this.导出EToolStripMenuItem, "导出EToolStripMenuItem");
+            this.导出EToolStripMenuItem.Name = "导出EToolStripMenuItem";
+            this.导出EToolStripMenuItem.Click += new System.EventHandler(this.导出EToolStripMenuItem_Click);
+            // 
+            // deleteDToolStripMenuItem
+            // 
+            resources.ApplyResources(this.deleteDToolStripMenuItem, "deleteDToolStripMenuItem");
+            this.deleteDToolStripMenuItem.Name = "deleteDToolStripMenuItem";
+            this.deleteDToolStripMenuItem.Click += new System.EventHandler(this.deleteDToolStripMenuItem_Click);
             // 
             // tasklistErrHandler
             // 
@@ -192,6 +209,12 @@
             this.gamefswatcher.SynchronizingObject = this;
             this.gamefswatcher.Created += new System.IO.FileSystemEventHandler(this.gamefswatcher_Created);
             this.gamefswatcher.Deleted += new System.IO.FileSystemEventHandler(this.gamefswatcher_Deleted);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "r6r.zip";
+            resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
+            this.saveFileDialog1.SupportMultiDottedExtensions = true;
             // 
             // Form1
             // 
@@ -232,5 +255,8 @@
         private ToolStripMenuItem copyToGameCToolStripMenuItem;
         private ToolStripMenuItem removeRToolStripMenuItem;
         private ToolStripMenuItem exportEToolStripMenuItem;
+        private SaveFileDialog saveFileDialog1;
+        private ToolStripMenuItem 详细信息DToolStripMenuItem;
+        private ToolStripMenuItem 导出EToolStripMenuItem;
     }
 }

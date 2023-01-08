@@ -1,6 +1,8 @@
 using libR6R;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 
 namespace Rainbow6_ReplayHandler
 {
@@ -572,6 +574,54 @@ namespace Rainbow6_ReplayHandler
             Saved.NewMatchFound += OnNewSavedSaveDetected;
             Saved.MatchRemoved += OnSavedSaveRemoved;
             gamefswatcher.Path = GameSavePath;
+        }
+
+        private void exportEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var r = GetSelectedReplays(listBox2, Saved);
+            foreach (var r2 in r)
+            {
+                saveFileDialog1.FileName = ReplayToDirname(r2) + ".r6r.zip";
+                var resutl = saveFileDialog1.ShowDialog();
+                if (resutl == DialogResult.OK)
+                {
+                    SyncTask(() =>
+                    {
+                        AchieveMatch(r2, saveFileDialog1.FileName);
+                    });
+                }
+                else break;
+            }
+        }
+
+        private void µ¼³öEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var r = GetSelectedReplays(listBox1, InGame);
+            foreach (var r2 in r)
+            {
+                saveFileDialog1.FileName = ReplayToDirname(r2) + ".r6r.zip";
+                var resutl = saveFileDialog1.ShowDialog();
+                if (resutl == DialogResult.OK)
+                {
+                    SyncTask(() =>
+                    {
+                        AchieveMatch(r2, saveFileDialog1.FileName);
+                    });
+                }
+                else break;
+            }
+        }
+
+        private void AchieveMatch(MatchReplay replay, string saveto)
+        {
+            var a = new Achiver(saveto);
+            var folder = replay.GetCorrectSaveDirName();
+            var files = Directory.GetFiles(replay.DirPath, "*.rec");
+            foreach (var file in files)
+            {
+                a.AddFile(file, folder);
+            }
+            a.Finish();
         }
     }
 }

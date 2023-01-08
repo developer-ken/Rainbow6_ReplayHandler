@@ -71,25 +71,31 @@
     <value>类型	地图	模式	K/D	时间</value>
   </data>
   <data name="copyToGameCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="copyToGameCToolStripMenuItem.Text" xml:space="preserve">
     <value>复制到游戏内(&amp;C)</value>
   </data>
-  <data name="removeRToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
+  <data name="详细信息DToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="removeRToolStripMenuItem.Text" xml:space="preserve">
-    <value>删除(&amp;R)</value>
+  <data name="详细信息DToolStripMenuItem.Text" xml:space="preserve">
+    <value>详细信息(&amp;D)</value>
   </data>
   <data name="exportEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="exportEToolStripMenuItem.Text" xml:space="preserve">
     <value>导出(&amp;E)</value>
   </data>
+  <data name="removeRToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="removeRToolStripMenuItem.Text" xml:space="preserve">
+    <value>删除(&amp;R)</value>
+  </data>
   <data name="SavesRckickMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 70</value>
+    <value>181, 114</value>
   </data>
   <data name="listBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>439, 225</value>
@@ -124,11 +130,11 @@
   <data name="unSelectUToolStripMenuItem.Text" xml:space="preserve">
     <value>移动到存储库(&amp;M)</value>
   </data>
-  <data name="deleteDToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="openDirectoryOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
   </data>
-  <data name="deleteDToolStripMenuItem.Text" xml:space="preserve">
-    <value>删除(&amp;R)</value>
+  <data name="openDirectoryOToolStripMenuItem.Text" xml:space="preserve">
+    <value>打开文件位置(&amp;O)</value>
   </data>
   <data name="detailsDToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
@@ -136,14 +142,20 @@
   <data name="detailsDToolStripMenuItem.Text" xml:space="preserve">
     <value>详细信息(&amp;D)</value>
   </data>
-  <data name="openDirectoryOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="导出EToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
   </data>
-  <data name="openDirectoryOToolStripMenuItem.Text" xml:space="preserve">
-    <value>打开文件位置(&amp;O)</value>
+  <data name="导出EToolStripMenuItem.Text" xml:space="preserve">
+    <value>导出(&amp;E)</value>
+  </data>
+  <data name="deleteDToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 22</value>
+  </data>
+  <data name="deleteDToolStripMenuItem.Text" xml:space="preserve">
+    <value>删除(&amp;R)</value>
   </data>
   <data name="InGameRclickMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 114</value>
+    <value>169, 136</value>
   </data>
   <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>435, 225</value>
@@ -159,5 +171,11 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>彩六游戏回放管理器</value>
+  </data>
+  <data name="saveFileDialog1.Filter" xml:space="preserve">
+    <value>R6回放包|*.r6r.zip</value>
+  </data>
+  <data name="saveFileDialog1.Title" xml:space="preserve">
+    <value>导出游戏回放</value>
   </data>
 </root>

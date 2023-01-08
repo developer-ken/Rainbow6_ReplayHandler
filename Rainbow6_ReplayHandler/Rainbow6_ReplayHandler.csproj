@@ -6,9 +6,13 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <AssemblyVersion>23.1.8.160</AssemblyVersion>
-    <FileVersion>23.1.8.160</FileVersion>
+    <AssemblyVersion>23.1.8.166</AssemblyVersion>
+    <FileVersion>23.1.8.166</FileVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SharpZipLib" Version="1.4.1" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\libR6R\libR6R.csproj" />
