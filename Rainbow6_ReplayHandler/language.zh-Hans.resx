@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GAMEMODE_AREA" xml:space="preserve">
+    <value>占点</value>
+  </data>
+  <data name="GAMEMODE_BOMB" xml:space="preserve">
+    <value>炸弹</value>
+  </data>
+  <data name="GAMEMODE_HOSTAGE" xml:space="preserve">
+    <value>人质</value>
+  </data>
+  <data name="GAMEMODE_UNKNOWN" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="GAMETYPE_CUSTOM_LOCAL" xml:space="preserve">
+    <value>本地</value>
+  </data>
+  <data name="GAMETYPE_CUSTOM_ONLINE" xml:space="preserve">
+    <value>联机</value>
+  </data>
+  <data name="GAMETYPE_QUICKMATCH" xml:space="preserve">
+    <value>快速</value>
+  </data>
+  <data name="GAMETYPE_RANKED" xml:space="preserve">
+    <value>排位</value>
+  </data>
+  <data name="GAMETYPE_UNKNOWN" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="GAMETYPE_UNRANKED" xml:space="preserve">
+    <value>非排</value>
+  </data>
+  <data name="GAME_INSTANCE_NOT_FOUND" xml:space="preserve">
+    <value>第一次使用本软件时，我们需要定位游戏安装路径。请先打开游戏，进入游戏主页面后切回本窗口点击确认。这将帮助我们定位游戏安装位置。</value>
+  </data>
+  <data name="GAME_INSTANCE_NOT_FOUND_TITLE" xml:space="preserve">
+    <value>定位游戏安装路径</value>
+  </data>
+  <data name="MAP_BANK" xml:space="preserve">
+    <value>银行</value>
+  </data>
+  <data name="MAP_BARTLETT_U" xml:space="preserve">
+    <value>大学</value>
+  </data>
+  <data name="MAP_BORDER" xml:space="preserve">
+    <value>边境</value>
+  </data>
+  <data name="MAP_CHALET" xml:space="preserve">
+    <value>木屋</value>
+  </data>
+  <data name="MAP_CLUB_HOUSE" xml:space="preserve">
+    <value>俱乐部</value>
+  </data>
+  <data name="MAP_COASTLINE" xml:space="preserve">
+    <value>海岸线</value>
+  </data>
+  <data name="MAP_CONSULATE" xml:space="preserve">
+    <value>使馆</value>
+  </data>
+  <data name="MAP_EMERALD_PLAINS" xml:space="preserve">
+    <value>翡翠原</value>
+  </data>
+  <data name="MAP_FAVELA" xml:space="preserve">
+    <value>贫民窟</value>
+  </data>
+  <data name="MAP_FORTRESS" xml:space="preserve">
+    <value>堡垒</value>
+  </data>
+  <data name="MAP_HEREFORD_BASE" xml:space="preserve">
+    <value>赫里福</value>
+  </data>
+  <data name="MAP_HOUSE" xml:space="preserve">
+    <value>豪宅</value>
+  </data>
+  <data name="MAP_KAFE_DOSTOYEVSKY" xml:space="preserve">
+    <value>咖啡馆</value>
+  </data>
+  <data name="MAP_KANAL" xml:space="preserve">
+    <value>运河</value>
+  </data>
+  <data name="MAP_NIGHTHAVEN_LABS" xml:space="preserve">
+    <value>永夜安港</value>
+  </data>
+  <data name="MAP_OREGON" xml:space="preserve">
+    <value>俄勒冈</value>
+  </data>
+  <data name="MAP_OUTBACK" xml:space="preserve">
+    <value>荒漠</value>
+  </data>
+  <data name="MAP_PRESIDENTIAL_PLANE" xml:space="preserve">
+    <value>飞机</value>
+  </data>
+  <data name="MAP_SKYSCRAPER" xml:space="preserve">
+    <value>摩天大楼</value>
+  </data>
+  <data name="MAP_STADIUM_BRAVO" xml:space="preserve">
+    <value>B号</value>
+  </data>
+  <data name="MAP_THEME_PARK" xml:space="preserve">
+    <value>主题公园</value>
+  </data>
+  <data name="MAP_TOWER" xml:space="preserve">
+    <value>塔楼</value>
+  </data>
+  <data name="MAP_UNKNOWN" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="MAP_VILLA" xml:space="preserve">
+    <value>别墅</value>
+  </data>
+  <data name="MAP_YACHT" xml:space="preserve">
+    <value>游轮</value>
+  </data>
+  <data name="TASK_EXCEPTION" xml:space="preserve">
+    <value>一个后台任务遇到了错误，诊断信息如下：</value>
+  </data>
+  <data name="TASK_EXCEPTION_TITLE" xml:space="preserve">
+    <value>后台任务出错</value>
+  </data>
+</root>
