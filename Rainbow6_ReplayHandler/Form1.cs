@@ -79,6 +79,7 @@ namespace Rainbow6_ReplayHandler
                 }
             });
         }
+
         private void InvokeBgTask(Action action)
         {
             Task.Run(() =>
@@ -141,6 +142,12 @@ namespace Rainbow6_ReplayHandler
         private void OnSavedSaveRemoved(MatchReplay r)
         {
             listBox2.Items.Remove(ReplayToString(r));
+        }
+
+        private void OnInGameSaveUpdated(MatchReplay r)
+        {
+            int index = InGame.Replays.IndexOf(r);
+            listBox1.Items[index] = ReplayToString(r);
         }
 
         private string ReplayToString(MatchReplay match)
@@ -267,7 +274,9 @@ namespace Rainbow6_ReplayHandler
                     break;
             }
 
-            return matchtype + "\t" + map + "\t" + gamemode + "\t" + match.HostTotalKill + "/" + match.HostTotalDeath + "\t" + match.MatchTime.ToString("yyyy-MM-dd HH:mm:ss");
+            return matchtype + "\t" + map + "\t" + gamemode + "\t" +
+                (match.RecPlayer is not null ? (match.HostTotalKill + "/" + match.HostTotalDeath) : "?/?")
+                + "\t" + match.MatchTime.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         private string ReplayToDirname(MatchReplay match)
@@ -539,9 +548,16 @@ namespace Rainbow6_ReplayHandler
             DeleteSelected(listBox2, Saved);
         }
 
-        private void gamefswatcher_Changed(object sender, FileSystemEventArgs e)
+        private void gamefswatcher_Created(object sender, FileSystemEventArgs e)
         {
+            if (Path.GetExtension(e.FullPath).ToLower() == ".rec")
+                InvokeBgTask(InGame.UpdateAsync);
+        }
 
+        private void gamefswatcher_Deleted(object sender, FileSystemEventArgs e)
+        {
+            if (Path.GetExtension(e.FullPath).ToLower() == ".rec")
+                InvokeBgTask(InGame.UpdateAsync);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -551,9 +567,11 @@ namespace Rainbow6_ReplayHandler
             InvokeBgTask(Saved.UpdateAsync);
             InGame.NewMatchFound += OnNewInGameSaveDetected;
             InGame.MatchRemoved += OnInGameSaveRemoved;
+            InGame.MatchChanged += OnInGameSaveUpdated;
 
             Saved.NewMatchFound += OnNewSavedSaveDetected;
             Saved.MatchRemoved += OnSavedSaveRemoved;
+            gamefswatcher.Path = GameSavePath;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace libR6R
+﻿using System.Text;
+
+namespace libR6R
 {
     public class MatchReplay : IEquatable<MatchReplay>
     {
@@ -15,6 +17,20 @@
         public int RoundsPerMatch { get; private set; } = -1;
         public int RoundsPerMatchOvertime { get; private set; } = -1;
         public string DirPath;
+
+        private string rec_player_name;
+        public string RecPlayerName
+        {
+            set
+            {
+                rec_player_name = value;
+                if (rec_player_name is null) return;
+                foreach (var round in Rounds)
+                {
+                    round.Value.RecorderName = rec_player_name;
+                }
+            }
+        }
 
         public MatchReplay(string replaydir)
         {
@@ -47,14 +63,19 @@
                         rounds.Add(round);
                 }
             }
+            if (rounds.Count == 0) return;
             foreach (var task in rounds)
             {
                 await task;
                 var round = task.Result;
-                await round.DumpRawjsonAsync();
+                try
+                {
+                    await round.DumpRawjsonAsync();
+                }
+                catch { }
                 if (Rounds.Values.Contains(round)) continue;
                 Rounds.Add(round.RoundNumber + round.OvertimeRoundNumber, round);
-
+                if (rec_player_name is not null) round.RecorderName = rec_player_name;
                 HostTotalKill += round.HostKills;
                 HostTotalDeath += round.HostDeaths;
 
@@ -100,6 +121,18 @@
                     RecPlayer = player.Value;
                     break;
                 }
+            }
+        }
+
+        public void RefreshKDs()
+        {
+            HostTotalKill = 0;
+            HostTotalDeath = 0;
+            foreach (var round in Rounds)
+            {
+                round.Value.UpdateKDs();
+                HostTotalKill += round.Value.HostKills;
+                HostTotalDeath += round.Value.HostDeaths;
             }
         }
 

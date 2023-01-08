@@ -187,8 +187,11 @@
             // gamefswatcher
             // 
             this.gamefswatcher.EnableRaisingEvents = true;
+            this.gamefswatcher.IncludeSubdirectories = true;
+            this.gamefswatcher.NotifyFilter = ((System.IO.NotifyFilters)((System.IO.NotifyFilters.FileName | System.IO.NotifyFilters.DirectoryName)));
             this.gamefswatcher.SynchronizingObject = this;
-            this.gamefswatcher.Changed += new System.IO.FileSystemEventHandler(this.gamefswatcher_Changed);
+            this.gamefswatcher.Created += new System.IO.FileSystemEventHandler(this.gamefswatcher_Created);
+            this.gamefswatcher.Deleted += new System.IO.FileSystemEventHandler(this.gamefswatcher_Deleted);
             // 
             // Form1
             // 

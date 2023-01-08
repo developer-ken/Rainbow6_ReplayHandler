@@ -5,6 +5,8 @@
         string _savepath;
         public List<MatchReplay> Replays = new List<MatchReplay>();
 
+        public string RecordPlayerName { get; set; }
+
         public delegate void MatchListChange(MatchReplay match);
         public event MatchListChange NewMatchFound;
         public event MatchListChange MatchRemoved;
@@ -78,36 +80,56 @@
                 var match = task.Result;
                 if (!Replays.Contains(match))
                 {
-                    Replays.Add(match);
+                    lock (Replays)
+                        Replays.Add(match);
+                    match.RefreshKDs();
                     NewMatchFound?.Invoke(match);
                 }
-                else
-                    throw new InvalidOperationException("Match UUID collision detected.");
             }
 
             {
                 List<MatchReplay> toBremoved = new List<MatchReplay>();
-                foreach (var match in Replays)
+                lock (Replays)
                 {
-                    if (!IsValidMatch(match.DirPath))
+                    foreach (var match in Replays)
                     {
-                        toBremoved.Add(match);
-                        MatchRemoved?.Invoke(match);
+                        if (!IsValidMatch(match.DirPath))
+                        {
+                            toBremoved.Add(match);
+                            MatchRemoved?.Invoke(match);
+                        }
                     }
-                }
-                foreach (var match in toBremoved)
-                {
-                    Replays.Remove(match);
+                    foreach (var match in toBremoved)
+                    {
+                        Replays.Remove(match);
+                    }
                 }
             }
 
-            foreach (var match in Replays)
-            {
-                if (await match.UpdateAsync())
+            lock (Replays)
+                foreach (var match in Replays)
                 {
-                    MatchChanged?.Invoke(match);
+                    if (match.RecPlayer is not null)
+                    {
+                        RecordPlayerName = match.RecPlayer.Name;
+                    }
+                    var task = match.UpdateAsync();
+                    task.Wait();
+
+                    if (RecordPlayerName is not null)
+                    {
+                        match.RecPlayerName = RecordPlayerName;
+                    }
+
+                    int kill = match.HostTotalKill, death = match.HostTotalDeath;
+
+                    match.RefreshKDs();
+
+                    if (task.Result || kill != match.HostTotalKill || death != match.HostTotalDeath)
+                    {
+                        MatchChanged?.Invoke(match);
+                    }
                 }
-            }
         }
     }
 }

@@ -30,6 +30,7 @@ namespace libR6R
         public List<Event> Events = new List<Event>();
         public JObject RawJson;
         public string SourceFile;
+        public string? RecorderName { private get; set; }
         public Player? RecPlayer
         {
             get
@@ -41,6 +42,12 @@ namespace libR6R
                         return player.Value;
                     }
                 }
+
+                if (RecorderName is not null)
+                {
+                    return Players[RecorderName];
+                }
+
                 return null;
             }
         }
@@ -197,6 +204,23 @@ namespace libR6R
                         default:
                             break;
                     }
+                    Events.Add(c_event);
+                }
+            }
+        }
+
+        public void UpdateKDs()
+        {
+            HostDeaths = 0;
+            HostKills = 0;
+            foreach (var ev in Events)
+            {
+                if (ev.Type == EventType.Kill)
+                {
+                    var e = (KillEvent)ev;
+                    if (e.TargetPlayer.Name == RecPlayer?.Name) HostDeaths++;
+                    else
+                    if (e.FromPlayer.Name == RecPlayer?.Name) HostKills++;
                 }
             }
         }
