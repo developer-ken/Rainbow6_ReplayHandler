@@ -8,9 +8,12 @@
         public string RecordPlayerName { get; set; }
 
         public delegate void MatchListChange(MatchReplay match);
+        public delegate void EventNoArgs();
         public event MatchListChange NewMatchFound;
         public event MatchListChange MatchRemoved;
         public event MatchListChange MatchChanged;
+        public event EventNoArgs UpdateFinished;
+        public bool UpdateDone = false;
 
         public MatchManager(string savepath)
         {
@@ -39,6 +42,7 @@
 
         public async Task UpdateAsync()
         {
+            UpdateDone = false;
             var flist = Directory.GetDirectories(_savepath);
             var tlist = new List<Task<MatchReplay>>();
             foreach (var f in flist)
@@ -103,6 +107,8 @@
                         MatchChanged?.Invoke(match);
                     }
                 }
+            UpdateDone = true;
+            UpdateFinished?.Invoke();
         }
     }
 }

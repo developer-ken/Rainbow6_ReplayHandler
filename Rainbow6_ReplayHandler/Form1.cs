@@ -12,6 +12,7 @@ namespace Rainbow6_ReplayHandler
         string GameSavePath;
         MatchManager InGame, Saved;
         List<Task> UnImportantTasks = new List<Task>();
+        Wait pwait = new Wait();
 
         public Form1()
         {
@@ -58,9 +59,21 @@ namespace Rainbow6_ReplayHandler
                 jb.Add("GameSavePath", GameSavePath);
                 File.WriteAllText("conf.json", jb.ToString());
             }
-
+            pwait.label1.Text = "正在同步回放数据...";
+            Task.Run(pwait.ShowDialog);
             InGame = new MatchManager(GameSavePath);
             Saved = new MatchManager(SavePath);
+            InGame.UpdateFinished += UpdateFinished;
+            Saved.UpdateFinished += UpdateFinished;
+        }
+
+        private void UpdateFinished()
+        {
+            if (InGame.UpdateDone && Saved.UpdateDone)
+            {
+                while (!pwait.Shown) ;
+                pwait.Close();
+            }
         }
 
         private void fileSystemWatcher1_Changed(object sender, FileSystemEventArgs e)
