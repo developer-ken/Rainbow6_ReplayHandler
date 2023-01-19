@@ -52,6 +52,7 @@
             this.tasklistErrHandler = new System.Windows.Forms.Timer(this.components);
             this.gamefswatcher = new System.IO.FileSystemWatcher();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SavesRckickMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -216,10 +217,16 @@
             resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
             this.saveFileDialog1.SupportMultiDottedExtensions = true;
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -232,6 +239,7 @@
             this.InGameRclickMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gamefswatcher)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -258,5 +266,6 @@
         private SaveFileDialog saveFileDialog1;
         private ToolStripMenuItem 详细信息DToolStripMenuItem;
         private ToolStripMenuItem 导出EToolStripMenuItem;
+        private Label label1;
     }
 }

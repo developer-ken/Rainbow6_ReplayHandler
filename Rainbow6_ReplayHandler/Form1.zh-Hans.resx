@@ -70,6 +70,21 @@
   <data name="textBox2.Text" xml:space="preserve">
     <value>类型	地图	模式	K/D	时间</value>
   </data>
+  <data name="SavesRckickMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 92</value>
+  </data>
+  <data name="listBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>439, 225</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>465, 13</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>451, 276</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>存储库</value>
+  </data>
   <data name="copyToGameCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 22</value>
   </data>
@@ -94,20 +109,11 @@
   <data name="removeRToolStripMenuItem.Text" xml:space="preserve">
     <value>删除(&amp;R)</value>
   </data>
-  <data name="SavesRckickMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 92</value>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>447, 276</value>
   </data>
-  <data name="listBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>439, 225</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>465, 13</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>451, 276</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>存储库</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>游戏内回放</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 22</value>
@@ -117,6 +123,12 @@
   </data>
   <data name="textBox1.Text" xml:space="preserve">
     <value>类型	地图	模式	K/D	时间</value>
+  </data>
+  <data name="InGameRclickMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 136</value>
+  </data>
+  <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>435, 225</value>
   </data>
   <data name="savePermanentlyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
@@ -154,20 +166,14 @@
   <data name="deleteDToolStripMenuItem.Text" xml:space="preserve">
     <value>删除(&amp;R)</value>
   </data>
-  <data name="InGameRclickMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 136</value>
-  </data>
-  <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>435, 225</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>447, 276</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>游戏内回放</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>929, 301</value>
+    <value>929, 316</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>581, 17</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>在目前版本中，击倒也被记为击杀。这是因为我们暂时还不能从.rec文件中提取足够信息来区分击倒和击杀。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>彩六游戏回放管理器</value>
