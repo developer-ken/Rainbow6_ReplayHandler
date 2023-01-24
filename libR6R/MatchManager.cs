@@ -1,4 +1,6 @@
-﻿namespace libR6R
+﻿using System.Text.RegularExpressions;
+
+namespace libR6R
 {
     public class MatchManager
     {
@@ -38,6 +40,35 @@
                 if (Path.Equals(match.DirPath, savepath)) return true;
             }
             return false;
+        }
+
+        public bool ClearCache()
+        {
+            try
+            {
+                foreach(var match in Replays)
+                {
+                    match.ClearCache();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task ReloadReplay(MatchReplay replay)
+        {
+            if (IsValidMatch(replay.DirPath))
+            {
+                string matchdir = replay.DirPath;
+                Replays.Remove(replay);
+                MatchRemoved?.Invoke(replay);
+                var match = await MatchReplay.FromDirectoryAsync(matchdir);
+                Replays.Add(match);
+                NewMatchFound?.Invoke(match);
+            }
         }
 
         public async Task UpdateAsync()

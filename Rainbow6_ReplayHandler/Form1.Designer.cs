@@ -38,6 +38,7 @@
             this.copyToGameCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.详细信息DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.清除缓存TToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -47,6 +48,7 @@
             this.unSelectUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDirectoryOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detailsDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.清除缓存CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导出EToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tasklistErrHandler = new System.Windows.Forms.Timer(this.components);
@@ -98,6 +100,7 @@
             this.copyToGameCToolStripMenuItem,
             this.详细信息DToolStripMenuItem,
             this.exportEToolStripMenuItem,
+            this.清除缓存TToolStripMenuItem,
             this.removeRToolStripMenuItem});
             this.SavesRckickMenu.Name = "SavesRckickMenu";
             this.SavesRckickMenu.Opening += new System.ComponentModel.CancelEventHandler(this.SavesRckickMenu_Opening);
@@ -118,6 +121,12 @@
             resources.ApplyResources(this.exportEToolStripMenuItem, "exportEToolStripMenuItem");
             this.exportEToolStripMenuItem.Name = "exportEToolStripMenuItem";
             this.exportEToolStripMenuItem.Click += new System.EventHandler(this.exportEToolStripMenuItem_Click);
+            // 
+            // 清除缓存TToolStripMenuItem
+            // 
+            resources.ApplyResources(this.清除缓存TToolStripMenuItem, "清除缓存TToolStripMenuItem");
+            this.清除缓存TToolStripMenuItem.Name = "清除缓存TToolStripMenuItem";
+            this.清除缓存TToolStripMenuItem.Click += new System.EventHandler(this.清除缓存TToolStripMenuItem_Click);
             // 
             // removeRToolStripMenuItem
             // 
@@ -156,6 +165,7 @@
             this.unSelectUToolStripMenuItem,
             this.openDirectoryOToolStripMenuItem,
             this.detailsDToolStripMenuItem,
+            this.清除缓存CToolStripMenuItem,
             this.导出EToolStripMenuItem,
             this.deleteDToolStripMenuItem});
             this.InGameRclickMenu.Name = "InGameRclickMenu";
@@ -183,6 +193,12 @@
             // 
             resources.ApplyResources(this.detailsDToolStripMenuItem, "detailsDToolStripMenuItem");
             this.detailsDToolStripMenuItem.Name = "detailsDToolStripMenuItem";
+            // 
+            // 清除缓存CToolStripMenuItem
+            // 
+            resources.ApplyResources(this.清除缓存CToolStripMenuItem, "清除缓存CToolStripMenuItem");
+            this.清除缓存CToolStripMenuItem.Name = "清除缓存CToolStripMenuItem";
+            this.清除缓存CToolStripMenuItem.Click += new System.EventHandler(this.清除缓存CToolStripMenuItem_Click);
             // 
             // 导出EToolStripMenuItem
             // 
@@ -229,6 +245,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
@@ -267,5 +285,7 @@
         private ToolStripMenuItem 详细信息DToolStripMenuItem;
         private ToolStripMenuItem 导出EToolStripMenuItem;
         private Label label1;
+        private ToolStripMenuItem 清除缓存CToolStripMenuItem;
+        private ToolStripMenuItem 清除缓存TToolStripMenuItem;
     }
 }

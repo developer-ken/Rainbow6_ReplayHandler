@@ -61,7 +61,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 《彩虹六号：围攻》不在运行。请先打开游戏，然后点击确认。这将帮助我们定位游戏安装位置。 的本地化字符串。
+        ///   查找类似 RainbowSix:Seige is not running. Start the game and click OK. By doing this, we will be able to locate the game. 的本地化字符串。
         /// </summary>
         internal static string GAME_INSTANCE_NOT_FOUND {
             get {
@@ -70,7 +70,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 未找到游戏 的本地化字符串。
+        ///   查找类似 Game not cound 的本地化字符串。
         /// </summary>
         internal static string GAME_INSTANCE_NOT_FOUND_TITLE {
             get {
@@ -79,7 +79,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 占点 的本地化字符串。
+        ///   查找类似 Secure Area 的本地化字符串。
         /// </summary>
         internal static string GAMEMODE_AREA {
             get {
@@ -88,7 +88,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 炸弹 的本地化字符串。
+        ///   查找类似 Bomb 的本地化字符串。
         /// </summary>
         internal static string GAMEMODE_BOMB {
             get {
@@ -97,7 +97,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 人质 的本地化字符串。
+        ///   查找类似 Hostage 的本地化字符串。
         /// </summary>
         internal static string GAMEMODE_HOSTAGE {
             get {
@@ -106,7 +106,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 未知 的本地化字符串。
+        ///   查找类似 Unknown 的本地化字符串。
         /// </summary>
         internal static string GAMEMODE_UNKNOWN {
             get {
@@ -115,7 +115,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 本地 的本地化字符串。
+        ///   查找类似 Local 的本地化字符串。
         /// </summary>
         internal static string GAMETYPE_CUSTOM_LOCAL {
             get {
@@ -124,7 +124,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 联机 的本地化字符串。
+        ///   查找类似 Online 的本地化字符串。
         /// </summary>
         internal static string GAMETYPE_CUSTOM_ONLINE {
             get {
@@ -133,7 +133,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 快速 的本地化字符串。
+        ///   查找类似 Quick 的本地化字符串。
         /// </summary>
         internal static string GAMETYPE_QUICKMATCH {
             get {
@@ -142,7 +142,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 排位 的本地化字符串。
+        ///   查找类似 Ranked 的本地化字符串。
         /// </summary>
         internal static string GAMETYPE_RANKED {
             get {
@@ -151,7 +151,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 未知 的本地化字符串。
+        ///   查找类似 Unknown 的本地化字符串。
         /// </summary>
         internal static string GAMETYPE_UNKNOWN {
             get {
@@ -160,7 +160,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 非排 的本地化字符串。
+        ///   查找类似 Unranked 的本地化字符串。
         /// </summary>
         internal static string GAMETYPE_UNRANKED {
             get {
@@ -169,7 +169,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 银行 的本地化字符串。
+        ///   查找类似 Bank	 的本地化字符串。
         /// </summary>
         internal static string MAP_BANK {
             get {
@@ -178,7 +178,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 大学 的本地化字符串。
+        ///   查找类似 Bartlett University 的本地化字符串。
         /// </summary>
         internal static string MAP_BARTLETT_U {
             get {
@@ -187,7 +187,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 边境 的本地化字符串。
+        ///   查找类似 Border	 的本地化字符串。
         /// </summary>
         internal static string MAP_BORDER {
             get {
@@ -196,7 +196,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 木屋 的本地化字符串。
+        ///   查找类似 Chalet	 的本地化字符串。
         /// </summary>
         internal static string MAP_CHALET {
             get {
@@ -205,7 +205,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 俱乐部 的本地化字符串。
+        ///   查找类似 Club	 的本地化字符串。
         /// </summary>
         internal static string MAP_CLUB_HOUSE {
             get {
@@ -214,7 +214,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 海岸线 的本地化字符串。
+        ///   查找类似 Coast Line 的本地化字符串。
         /// </summary>
         internal static string MAP_COASTLINE {
             get {
@@ -223,7 +223,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 使馆 的本地化字符串。
+        ///   查找类似 Consulate	 的本地化字符串。
         /// </summary>
         internal static string MAP_CONSULATE {
             get {
@@ -232,7 +232,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 翡翠原 的本地化字符串。
+        ///   查找类似 Emerald Plains 的本地化字符串。
         /// </summary>
         internal static string MAP_EMERALD_PLAINS {
             get {
@@ -241,7 +241,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 贫民窟 的本地化字符串。
+        ///   查找类似 Favela	 的本地化字符串。
         /// </summary>
         internal static string MAP_FAVELA {
             get {
@@ -250,7 +250,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 堡垒 的本地化字符串。
+        ///   查找类似 Fortress	 的本地化字符串。
         /// </summary>
         internal static string MAP_FORTRESS {
             get {
@@ -259,7 +259,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 赫里福 的本地化字符串。
+        ///   查找类似 Hereford Base 的本地化字符串。
         /// </summary>
         internal static string MAP_HEREFORD_BASE {
             get {
@@ -268,7 +268,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 豪宅 的本地化字符串。
+        ///   查找类似 House	 的本地化字符串。
         /// </summary>
         internal static string MAP_HOUSE {
             get {
@@ -277,7 +277,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 咖啡馆 的本地化字符串。
+        ///   查找类似 Kafe	 的本地化字符串。
         /// </summary>
         internal static string MAP_KAFE_DOSTOYEVSKY {
             get {
@@ -286,7 +286,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 运河 的本地化字符串。
+        ///   查找类似 Kanal	 的本地化字符串。
         /// </summary>
         internal static string MAP_KANAL {
             get {
@@ -295,7 +295,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 永夜安港 的本地化字符串。
+        ///   查找类似 Nighthaven Labs 的本地化字符串。
         /// </summary>
         internal static string MAP_NIGHTHAVEN_LABS {
             get {
@@ -304,7 +304,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 俄勒冈 的本地化字符串。
+        ///   查找类似 Oregon	 的本地化字符串。
         /// </summary>
         internal static string MAP_OREGON {
             get {
@@ -313,7 +313,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 荒漠 的本地化字符串。
+        ///   查找类似 Outback	 的本地化字符串。
         /// </summary>
         internal static string MAP_OUTBACK {
             get {
@@ -322,7 +322,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 飞机 的本地化字符串。
+        ///   查找类似 Plane	 的本地化字符串。
         /// </summary>
         internal static string MAP_PRESIDENTIAL_PLANE {
             get {
@@ -331,7 +331,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 摩天大楼 的本地化字符串。
+        ///   查找类似 Skyscraper 的本地化字符串。
         /// </summary>
         internal static string MAP_SKYSCRAPER {
             get {
@@ -340,7 +340,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 B号 的本地化字符串。
+        ///   查找类似 Stadium Bravo 的本地化字符串。
         /// </summary>
         internal static string MAP_STADIUM_BRAVO {
             get {
@@ -349,7 +349,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 主题公园 的本地化字符串。
+        ///   查找类似 Theme Park	 的本地化字符串。
         /// </summary>
         internal static string MAP_THEME_PARK {
             get {
@@ -358,7 +358,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 塔楼 的本地化字符串。
+        ///   查找类似 Tower	 的本地化字符串。
         /// </summary>
         internal static string MAP_TOWER {
             get {
@@ -367,7 +367,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 未知 的本地化字符串。
+        ///   查找类似 Unknown	 的本地化字符串。
         /// </summary>
         internal static string MAP_UNKNOWN {
             get {
@@ -376,7 +376,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 别墅 的本地化字符串。
+        ///   查找类似 Villa	 的本地化字符串。
         /// </summary>
         internal static string MAP_VILLA {
             get {
@@ -385,7 +385,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 游轮 的本地化字符串。
+        ///   查找类似 Yacht	 的本地化字符串。
         /// </summary>
         internal static string MAP_YACHT {
             get {
@@ -394,7 +394,25 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 一个后台任务遇到了错误。不用担心，这一般不会影响其它功能运行。 的本地化字符串。
+        ///   查找类似 Reading your local records... 的本地化字符串。
+        /// </summary>
+        internal static string MSG_READING_REC_DATA {
+            get {
+                return ResourceManager.GetString("MSG_READING_REC_DATA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Takes longer when first run or new version. 的本地化字符串。
+        /// </summary>
+        internal static string MSG_REC_TEMP {
+            get {
+                return ResourceManager.GetString("MSG_REC_TEMP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 A background task failed. It is not fatal, but worth mentioning. 的本地化字符串。
         /// </summary>
         internal static string TASK_EXCEPTION {
             get {
@@ -403,7 +421,7 @@ namespace Rainbow6_ReplayHandler {
         }
         
         /// <summary>
-        ///   查找类似 后台任务出错 的本地化字符串。
+        ///   查找类似 Background Task Failure 的本地化字符串。
         /// </summary>
         internal static string TASK_EXCEPTION_TITLE {
             get {

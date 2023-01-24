@@ -7,6 +7,7 @@ namespace libR6R
 {
     public class RoundReplay : IEquatable<RoundReplay>
     {
+        public const int LibR6RVersionCode = 3;
         private static bool registered = false;
 
         public string GameVersion { get; private set; }
@@ -15,7 +16,7 @@ namespace libR6R
         public DateTime MatchTime { get; private set; }
         public MatchType MatchType { get; private set; }
         public string MapName { get; private set; }
-        public ulong RecPlayerId { get; private set; }
+        public string RecPlayerPid { get; private set; }
         public Map Map { get; private set; }
         public GameMode GameMode { get; private set; }
         public int RoundsPerMatch { get; private set; }
@@ -37,7 +38,7 @@ namespace libR6R
             {
                 foreach (var player in Players)
                 {
-                    if (player.Value.Id == RecPlayerId)
+                    if (player.Value.ProfileId == RecPlayerPid)
                     {
                         return player.Value;
                     }
@@ -65,7 +66,7 @@ namespace libR6R
             MatchTypeStr = jb["header"]["matchType"].Value<string>("name");
             MapName = jb["header"]["map"].Value<string>("name");
             Map = (Map)jb["header"]["map"].Value<ulong>("id");
-            RecPlayerId = jb["header"].Value<ulong>("recordingPlayerID");
+            RecPlayerPid = jb["header"].Value<string>("recordingProfileID");
             GameMode = (GameMode)jb["header"]["gamemode"].Value<ulong>("id");
             RoundsPerMatch = jb["header"].Value<int>("roundsPerMatch");
             RoundsPerMatchOvertime = jb["header"].Value<int>("roundsPerMatchOvertime");
@@ -85,7 +86,7 @@ namespace libR6R
                     Players.Add(player.Name, player);
                 else
                 {
-                    if (Players[player.Name].Id < 1)
+                    if (Players[player.Name].ProfileId == "")
                         Players[player.Name] = player;
                 }
             }
@@ -142,7 +143,7 @@ namespace libR6R
             MatchTypeStr = jb["header"]["matchType"].Value<string>("name");
             MapName = jb["header"]["map"].Value<string>("name");
             Map = (Map)jb["header"]["map"].Value<ulong>("id");
-            RecPlayerId = jb["header"].Value<ulong>("recordingPlayerID");
+            RecPlayerPid = jb["header"].Value<string>("recordingProfileID");
             GameMode = (GameMode)jb["header"]["gamemode"].Value<ulong>("id");
             RoundsPerMatch = jb["header"].Value<int>("roundsPerMatch");
             RoundsPerMatchOvertime = jb["header"].Value<int>("roundsPerMatchOvertime");
@@ -162,7 +163,7 @@ namespace libR6R
                     Players.Add(player.Name, player);
                 else
                 {
-                    if (Players[player.Name].Id < 1)
+                    if (Players[player.Name].ProfileId == "")
                         Players[player.Name] = player;
                 }
             }
@@ -225,12 +226,6 @@ namespace libR6R
             }
         }
 
-        public static RoundReplay ReadFromFile(string filepath)
-        {
-            var jb = RawRec2Json(filepath);
-            return new RoundReplay(jb) { SourceFile = filepath };
-        }
-
         public static async Task<RoundReplay> ReadFromFileAsync(string filepath, Dictionary<string, Player> plist = null)
         {
             var dir = Path.GetDirectoryName(filepath);
@@ -242,6 +237,10 @@ namespace libR6R
                 try
                 {
                     jb = JObject.Parse(File.ReadAllText(bakedjson));
+                    if ((!jb.ContainsKey("libr6r_ver")) || jb.Value<int>("libr6r_ver") != LibR6RVersionCode)
+                    {
+                        jb = await RawRec2JsonAsync(filepath);
+                    }
                 }
                 catch
                 {
@@ -277,8 +276,26 @@ namespace libR6R
             File.SetAttributes(bakedjson, FileAttributes.Hidden);
         }
 
+        public void ClearCache(string recfilepath = null)
+        {
+            string _recfilepath = SourceFile;
+            if (recfilepath is not null)
+            {
+                _recfilepath = recfilepath;
+            }
+            if (_recfilepath is null)
+            {
+                throw new ArgumentNullException("Can't figure out recfilepath.");
+            }
+            var dir = Path.GetDirectoryName(_recfilepath);
+            var fname = Path.GetFileNameWithoutExtension(_recfilepath);
+            var bakedjson = Path.Combine(dir, fname + ".snapshot.json");
+            if (File.Exists(bakedjson)) File.Delete(bakedjson);
+        }
+
         private static JObject RawRec2Json(string filepath)
         {
+            RateLimit.GetToken();
             if (!registered)
             {
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
@@ -295,10 +312,13 @@ namespace libR6R
             startInfo.CreateNoWindow = true;
             startInfo.StandardOutputEncoding = Encoding.UTF8;
             r6d.StartInfo = startInfo;
-            while (IsFileOccupied(filepath)) Thread.Sleep(500); 
+            while (IsFileOccupied(filepath)) Thread.Sleep(500);
             r6d.Start();
             r6d.WaitForExit();
-            return JObject.Parse(r6d.StandardOutput.ReadToEnd());
+            var rawjson = JObject.Parse(r6d.StandardOutput.ReadToEnd());
+            rawjson.Add("libr6r_ver", LibR6RVersionCode);
+            RateLimit.ReleaseToken();
+            return rawjson;
         }
 
         public static bool IsFileOccupied(string fname)

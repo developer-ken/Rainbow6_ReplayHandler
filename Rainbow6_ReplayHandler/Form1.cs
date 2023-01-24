@@ -1,5 +1,6 @@
 using libR6R;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
@@ -10,6 +11,7 @@ namespace Rainbow6_ReplayHandler
     {
         const string SavePath = "GameReplay";
         string GameSavePath;
+        bool exception = false;
         MatchManager InGame, Saved;
         List<Task> UnImportantTasks = new List<Task>();
         Wait pwait = new Wait();
@@ -59,7 +61,8 @@ namespace Rainbow6_ReplayHandler
                 jb.Add("GameSavePath", GameSavePath);
                 File.WriteAllText("conf.json", jb.ToString());
             }
-            pwait.label1.Text = "正在同步回放数据...";
+            pwait.label1.Text = language.MSG_READING_REC_DATA;
+            pwait.label2.Text = language.MSG_REC_TEMP;
             Task.Run(pwait.ShowDialog);
             InGame = new MatchManager(GameSavePath);
             Saved = new MatchManager(SavePath);
@@ -71,8 +74,14 @@ namespace Rainbow6_ReplayHandler
         {
             if (InGame.UpdateDone && Saved.UpdateDone)
             {
-                while (!pwait.Shown) ;
+                if (exception)
+                {
+                    exception = false;
+                    return;
+                }
+                while (!pwait.Shown) Thread.Sleep(1000);
                 pwait.Close();
+                BringToFront();
             }
         }
 
@@ -125,6 +134,13 @@ namespace Rainbow6_ReplayHandler
                     }
                     catch (Exception err)
                     {
+                        if (pwait.Shown)
+                        {
+                            exception = true;
+                            pwait.Shown = false;
+                            pwait.Close();
+                            BringToFront();
+                        }
                         if (err.InnerException is null)
                             MessageBox.Show(language.TASK_EXCEPTION + "\n" + err.Message + "\n" + err.StackTrace, language.TASK_EXCEPTION_TITLE);
                         else
@@ -418,7 +434,8 @@ namespace Rainbow6_ReplayHandler
                     break;
             }
 
-            return matchtype + "_" + map + "_" + gamemode + "_" + match.MatchTime.ToString("yyyy-MM-dd_HH.mm.ss");
+            var fname = matchtype + "_" + map + "_" + gamemode + "_" + match.MatchTime.ToString("yyyy-MM-dd_HH.mm.ss");
+            return fname.Replace("\t", "");
         }
 
         private MatchReplay[] GetSelectedReplays(ListBox view, MatchManager man)
@@ -625,6 +642,33 @@ namespace Rainbow6_ReplayHandler
                 }
                 else break;
             }
+        }
+
+        private void 清除缓存TToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var r = GetSelectedReplays(listBox2, Saved);
+            SyncTask(() =>
+            {
+                foreach (var r2 in r)
+                {
+                    r2.ClearCache();
+                    Saved.ReloadReplay(r2).Wait();
+                }
+            });
+        }
+
+        private void 清除缓存CToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var r = GetSelectedReplays(listBox1, InGame);
+            SyncTask(() =>
+            {
+                foreach (var r2 in r)
+                {
+                    r2.ClearCache();
+                    InGame.ReloadReplay(r2).Wait();
+                }
+            });
+
         }
 
         private void AchieveMatch(MatchReplay replay, string saveto)

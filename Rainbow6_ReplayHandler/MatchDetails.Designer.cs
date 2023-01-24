@@ -32,7 +32,13 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -56,15 +62,54 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.listBox3);
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.listBox2);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            resources.ApplyResources(this.listBox2, "listBox2");
+            this.listBox2.Name = "listBox2";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox3, "textBox3");
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            resources.ApplyResources(this.listBox3, "listBox3");
+            this.listBox3.Name = "listBox3";
+            // 
             // MatchDetails
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "MatchDetails";
             this.Load += new System.EventHandler(this.MatchDetails_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -74,5 +119,10 @@
         private ListBox listBox1;
         private GroupBox groupBox1;
         private TextBox textBox1;
+        private GroupBox groupBox2;
+        private TextBox textBox2;
+        private ListBox listBox2;
+        private TextBox textBox3;
+        private ListBox listBox3;
     }
 }

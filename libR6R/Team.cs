@@ -6,7 +6,7 @@ namespace libR6R
     {
         public string Name;
         public int Score = 0;
-        public Player[] PlayerList = new Player[5];
+        public List<Player> PlayerList = new List<Player>(5);
         private int playerindex;
 
         public Team(string name, int score)
@@ -23,9 +23,7 @@ namespace libR6R
 
         public void AddPlayer(Player p)
         {
-            if (playerindex >= 5)
-                throw new IndexOutOfRangeException("Too many players in a team. Max 5 allowed.");
-            PlayerList[playerindex++] = p;
+            PlayerList.Add(p);
         }
     }
 }

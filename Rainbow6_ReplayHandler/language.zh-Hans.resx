@@ -228,6 +228,12 @@
   <data name="MAP_YACHT" xml:space="preserve">
     <value>游轮</value>
   </data>
+  <data name="MSG_READING_REC_DATA" xml:space="preserve">
+    <value>读取本地回放...</value>
+  </data>
+  <data name="MSG_REC_TEMP" xml:space="preserve">
+    <value>如果这是第一次运行或刚完成更新，则需要几分钟。</value>
+  </data>
   <data name="TASK_EXCEPTION" xml:space="preserve">
     <value>一个后台任务遇到了错误，诊断信息如下：</value>
   </data>

@@ -169,7 +169,7 @@
     <value>Club	</value>
   </data>
   <data name="MAP_COASTLINE" xml:space="preserve">
-    <value>Coast Line	</value>
+    <value>Coast Line</value>
   </data>
   <data name="MAP_CONSULATE" xml:space="preserve">
     <value>Consulate	</value>
@@ -208,7 +208,7 @@
     <value>Plane	</value>
   </data>
   <data name="MAP_SKYSCRAPER" xml:space="preserve">
-    <value>Skyscraper	</value>
+    <value>Skyscraper</value>
   </data>
   <data name="MAP_STADIUM_BRAVO" xml:space="preserve">
     <value>Stadium Bravo</value>
@@ -227,6 +227,12 @@
   </data>
   <data name="MAP_YACHT" xml:space="preserve">
     <value>Yacht	</value>
+  </data>
+  <data name="MSG_READING_REC_DATA" xml:space="preserve">
+    <value>Reading your local records...</value>
+  </data>
+  <data name="MSG_REC_TEMP" xml:space="preserve">
+    <value>Takes longer when first run or new version.</value>
   </data>
   <data name="TASK_EXCEPTION" xml:space="preserve">
     <value>A background task failed. It is not fatal, but worth mentioning.</value>

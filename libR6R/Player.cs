@@ -4,7 +4,7 @@ namespace libR6R
 {
     public class Player
     {
-        public ulong Id { get; private set; }
+        public string ProfileId { get; private set; }
         public string Name { get; private set; }
         public string HeroName { get; private set; }
         public ulong Hero { get; private set; }
@@ -17,7 +17,7 @@ namespace libR6R
 
         public Player(JObject jb, Team[] teams)
         {
-            Id = jb.Value<ulong>("id");
+            ProfileId = jb.Value<string>("profileID");
             Name = jb.Value<string>("username");
             HeroName = jb.Value<string>("heroName");
             Hero = jb.Value<ulong>("heroName");
@@ -27,9 +27,9 @@ namespace libR6R
             Team.AddPlayer(this);
         }
 
-        public Player(ulong id, string name, string heroName, ulong hero, Team team, ulong roleImage, ulong rolePortrait, int killed, int kills)
+        public Player(string pid, string name, string heroName, ulong hero, Team team, ulong roleImage, ulong rolePortrait, int killed, int kills)
         {
-            Id = id;
+            ProfileId = pid;
             Name = name;
             HeroName = heroName;
             Hero = hero;

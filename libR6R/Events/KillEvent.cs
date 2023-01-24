@@ -16,13 +16,13 @@ namespace libR6R.Events
 
             FromPlayer = playerlist.ContainsKey(fromplayer) ? playerlist[fromplayer] : Eval(() =>
             {
-                var pl = new Player(0, fromplayer, "", 0, null, 0, 0, 0, 0);
+                var pl = new Player("", fromplayer, "", 0, null, 0, 0, 0, 0);
                 lock (playerlist) playerlist.Add(fromplayer, pl);
                 return pl;
             });
             TargetPlayer = playerlist.ContainsKey(targetplayer) ? playerlist[targetplayer] : Eval(() =>
             {
-                var pl = new Player(0, targetplayer, "", 0, null, 0, 0, 0, 0);
+                var pl = new Player("", targetplayer, "", 0, null, 0, 0, 0, 0);
                 lock (playerlist) playerlist.Add(targetplayer, pl);
                 return pl;
             });

@@ -70,8 +70,38 @@
   <data name="textBox2.Text" xml:space="preserve">
     <value>类型	地图	模式	K/D	时间</value>
   </data>
+  <data name="copyToGameCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="copyToGameCToolStripMenuItem.Text" xml:space="preserve">
+    <value>复制到游戏内(&amp;C)</value>
+  </data>
+  <data name="详细信息DToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="详细信息DToolStripMenuItem.Text" xml:space="preserve">
+    <value>详细信息(&amp;D)</value>
+  </data>
+  <data name="exportEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="exportEToolStripMenuItem.Text" xml:space="preserve">
+    <value>导出(&amp;E)</value>
+  </data>
+  <data name="清除缓存TToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="清除缓存TToolStripMenuItem.Text" xml:space="preserve">
+    <value>重新读取(&amp;T)</value>
+  </data>
+  <data name="removeRToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="removeRToolStripMenuItem.Text" xml:space="preserve">
+    <value>删除(&amp;R)</value>
+  </data>
   <data name="SavesRckickMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 92</value>
+    <value>181, 136</value>
   </data>
   <data name="listBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>439, 225</value>
@@ -85,36 +115,6 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>存储库</value>
   </data>
-  <data name="copyToGameCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
-  </data>
-  <data name="copyToGameCToolStripMenuItem.Text" xml:space="preserve">
-    <value>复制到游戏内(&amp;C)</value>
-  </data>
-  <data name="详细信息DToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
-  </data>
-  <data name="详细信息DToolStripMenuItem.Text" xml:space="preserve">
-    <value>详细信息(&amp;D)</value>
-  </data>
-  <data name="exportEToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
-  </data>
-  <data name="exportEToolStripMenuItem.Text" xml:space="preserve">
-    <value>导出(&amp;E)</value>
-  </data>
-  <data name="removeRToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
-  </data>
-  <data name="removeRToolStripMenuItem.Text" xml:space="preserve">
-    <value>删除(&amp;R)</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>447, 276</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>游戏内回放</value>
-  </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 22</value>
   </data>
@@ -123,12 +123,6 @@
   </data>
   <data name="textBox1.Text" xml:space="preserve">
     <value>类型	地图	模式	K/D	时间</value>
-  </data>
-  <data name="InGameRclickMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 136</value>
-  </data>
-  <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>435, 225</value>
   </data>
   <data name="savePermanentlyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
@@ -154,6 +148,12 @@
   <data name="detailsDToolStripMenuItem.Text" xml:space="preserve">
     <value>详细信息(&amp;D)</value>
   </data>
+  <data name="清除缓存CToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 22</value>
+  </data>
+  <data name="清除缓存CToolStripMenuItem.Text" xml:space="preserve">
+    <value>重新读取(&amp;T)</value>
+  </data>
   <data name="导出EToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
   </data>
@@ -165,6 +165,18 @@
   </data>
   <data name="deleteDToolStripMenuItem.Text" xml:space="preserve">
     <value>删除(&amp;R)</value>
+  </data>
+  <data name="InGameRclickMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 158</value>
+  </data>
+  <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>435, 225</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>447, 276</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>游戏内回放</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>929, 316</value>

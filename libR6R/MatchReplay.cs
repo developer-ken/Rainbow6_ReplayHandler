@@ -12,7 +12,7 @@ namespace libR6R
         public GameMode GameMode { get; private set; } = GameMode.UnKnown;
         public Player RecPlayer { get; private set; }
         public string MapName { get; private set; }
-        public ulong RecPlayerId { get; private set; } = 0;
+        public string RecPlayerPid { get; private set; } = "";
         public Map Map { get; private set; } = 0;
         public int RoundsPerMatch { get; private set; } = -1;
         public int RoundsPerMatchOvertime { get; private set; } = -1;
@@ -97,11 +97,11 @@ namespace libR6R
                 else if (Map != round.Map)
                     throw new InvalidOperationException("Multiple rounds not happed in the same Map, which is invalid.");
 
-                if (RecPlayerId == 0)
+                if (RecPlayerPid == "")
                 {
-                    RecPlayerId = round.RecPlayerId;
+                    RecPlayerPid = round.RecPlayerPid;
                 }
-                else if (RecPlayerId != round.RecPlayerId)
+                else if (RecPlayerPid != round.RecPlayerPid)
                     throw new InvalidOperationException("Multiple rounds not from a same Player, which is invalid.");
 
                 if (RoundsPerMatch == -1) RoundsPerMatch = round.RoundsPerMatch;
@@ -116,7 +116,7 @@ namespace libR6R
 
             foreach (var player in Players)
             {
-                if (player.Value.Id == RecPlayerId)
+                if (player.Value.ProfileId == RecPlayerPid)
                 {
                     RecPlayer = player.Value;
                     break;
@@ -144,6 +144,14 @@ namespace libR6R
             return item;
         }
 
+        public void ClearCache()
+        {
+            foreach(var r in Rounds)
+            {
+                r.Value.ClearCache();
+            }
+        }
+        
         public string GetCorrectSaveDirName()
         {
             if (Rounds.Count == 0) return "";
